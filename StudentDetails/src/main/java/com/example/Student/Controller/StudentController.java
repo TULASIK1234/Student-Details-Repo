@@ -73,14 +73,13 @@ public List<StudentResponse> listOfAllStudentDetails(StudentRequest studentReque
 @PutMapping("/update")
 public StudentResponse updateStudentDetails(@RequestBody StudentRequest studentRequest)
 {
-	StudentDTO dto = studentService.updateStudentDetails(studentRequest);
+	StudentDTO dto = studentService.update(studentRequest);
 	
 	StudentResponse response = new StudentResponse();
 	if (dto!=null)
 	{
 		response.setStudentId(dto.getStudentId());
 		response.setStudentName(dto.getStudentName());
-		response.setStudentEmail(dto.getStudentEmail());
 		response.setStudentCourse(dto.getStudentCourse());
 	
 		return response;

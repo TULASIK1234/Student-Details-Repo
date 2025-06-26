@@ -66,7 +66,7 @@ public List<StudentDTO> listOfAllStudentDetails(StudentRequest studentRequest)
 
 
 	
-public StudentDTO updateStudentDetails(StudentRequest studentRequest)
+public StudentDTO update(StudentRequest studentRequest)
 {
 	StudentEntity entity = studentRepository.findByStudentIdAndStudentName(studentRequest.getStudentId(),studentRequest.getStudentName());
 	
@@ -75,9 +75,6 @@ public StudentDTO updateStudentDetails(StudentRequest studentRequest)
 	if (entity != null) {
 		if (studentRequest.getStudentName() != null) {
 			dto.setStudentName(entity.getStudentName());
-		}
-		if (studentRequest.getStudentEmail() != null) {
-			dto.setStudentEmail(entity.getStudentEmail());
 		}
 		if (studentRequest.getStudentCourse() != null) {
 			dto.setStudentCourse(entity.getStudentCourse());
