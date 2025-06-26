@@ -1,3 +1,4 @@
+
 package com.example.Student.Controller;
 
 import java.util.ArrayList;
@@ -71,7 +72,7 @@ public List<StudentResponse> listOfAllStudentDetails(StudentRequest studentReque
 	}
 }
 
-@PutMapping("/update")
+@PutMapping("/updatestudentdetails")
 public StudentResponse updateStudentDetails(@RequestBody StudentRequest studentRequest)
 {
 	StudentDTO dto = studentService.updateStudentDetails(studentRequest);
@@ -91,7 +92,7 @@ else {
 }
 }
 
-@DeleteMapping("/delete")
+@DeleteMapping("/deletestudentdetails")
 public StudentResponse deleteAStudentById (@RequestBody StudentRequest studentRequest)
 {
 	StudentDTO dto = studentService.deleteAStudentById (studentRequest);
@@ -102,7 +103,6 @@ public StudentResponse deleteAStudentById (@RequestBody StudentRequest studentRe
 		response.setStudentId(dto.getStudentId());
 		response.setStudentName(dto.getStudentName());
 		response.setStudentEmail(dto.getStudentEmail());
-		response.setStudentCourse(dto.getStudentCourse());
 	
 		return response;
 	}

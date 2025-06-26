@@ -102,10 +102,7 @@ public StudentDTO deleteAStudentById (StudentRequest studentRequest)
 		if (studentRequest.getStudentEmail() != null) {
 			entity.setStudentEmail(studentRequest.getStudentEmail());
 		}
-		if (studentRequest.getStudentCourse() != null) {
-			entity.setStudentCourse(studentRequest.getStudentCourse());
-		}
-
+		
 		studentRepository.delete(entity);
 		return dto;
 	}
