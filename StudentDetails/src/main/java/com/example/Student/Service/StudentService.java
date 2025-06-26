@@ -55,7 +55,7 @@ public List<StudentDTO> listOfAllStudentDetails(StudentRequest studentRequest)
 		dto.setStudentId(entity.getStudentId());
 		dto.setStudentName(entity.getStudentName());
 		dto.setStudentEmail(entity.getStudentEmail());
-		
+		dto.setStudentCourse(entity.getStudentCourse());
 		 dtoList.add(dto);
 		}
 		
