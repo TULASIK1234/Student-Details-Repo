@@ -45,7 +45,7 @@ public StudentResponse saveStudent(@RequestBody StudentRequest studentRequest)
 	}
 }
 
-@GetMapping("/list")
+@GetMapping("/liststudentdetails")
 public List<StudentResponse> listOfAllStudentDetails(StudentRequest studentRequest)
 {	
 	List<StudentDTO> dtoList = studentService.listOfAllStudentDetails(studentRequest);
@@ -59,7 +59,6 @@ public List<StudentResponse> listOfAllStudentDetails(StudentRequest studentReque
 	    response.setStudentId(dto.getStudentId());
 	    response.setStudentName(dto.getStudentName());
 	    response.setStudentEmail(dto.getStudentEmail());
-	    response.setStudentCourse(dto.getStudentCourse());
 
 	    responseList.add(response);  // adding each response object to the list
 	}
